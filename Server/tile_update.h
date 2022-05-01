@@ -78,11 +78,11 @@ inline void tile_update(int x, int y, int tile, int c_b, World* world, ENetPeer*
 			}
 		}
 		if (getItemDef(tile).blockType == BlockTypes::BACKGROUND) {
-			cout << getItemDef(world->items[x + (y * world->width)].background).name << endl;
+			world->items[x + (y * world->width)].background = tile;
 		} else if (getItemDef(tile).blockType == BlockTypes::SEED) {
-			cout << getItemDef(world->items[x + (y * world->width)].foreground).name << endl;
+			world->items[x + (y * world->width)].foreground = tile;
 		} else {
-			cout << getItemDef(world->items[x + (y * world->width)].foreground).name << endl;
+			world->items[x + (y * world->width)].foreground = tile;
 		}
 		world->items[x + (y * world->width)].breakLevel = 0;
 	}
